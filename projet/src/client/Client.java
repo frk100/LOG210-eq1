@@ -37,4 +37,8 @@ public abstract class Client {
 	private void setMotDePasse(String motDePasse){
 		this.motDePasse = motDePasse;
 	}
+	
+	public String toString(){
+		return this.getAdresseCourriel().toString();
+	}
 }

@@ -1,5 +1,7 @@
 package types;
 
+import javax.swing.JOptionPane;
+
 /**
  * Classe de représentation d'une adresse courriel.
  */
@@ -23,10 +25,15 @@ public class AdresseCourriel {
 	/*
 	 * Contructeur
 	 */
-	public AdresseCourriel(String adresse){		
-		setNom(adresse.substring(0, adresse.indexOf(SEPARATEUR_DOM)));
-		setDomaine(adresse.substring(adresse.indexOf(SEPARATEUR_DOM) + 1, adresse.indexOf(SEPARATEUR_EXT)));
-		setExtension(adresse.substring(adresse.indexOf(SEPARATEUR_EXT) + 1));
+	public AdresseCourriel(String adresse){
+		if(adresse.matches("(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$)")){
+			setNom(adresse.substring(0, adresse.indexOf(SEPARATEUR_DOM)));
+			setDomaine(adresse.substring(adresse.indexOf(SEPARATEUR_DOM) + 1, adresse.indexOf(SEPARATEUR_EXT)));
+			setExtension(adresse.substring(adresse.indexOf(SEPARATEUR_EXT) + 1));
+		}
+		else{
+			JOptionPane.showMessageDialog(null, "Adresse courriel invalide.");
+		}
 	}
 	
 	/**

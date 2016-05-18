@@ -47,7 +47,6 @@ public class GUI extends JFrame{
 		super(titre);
 		this.setSize(DIMENSION_DEFAUT);
 		
-		
 		JPanel panelChamps = new JPanel();
 		
 		panelChamps.setLayout(new BoxLayout(panelChamps, BoxLayout.PAGE_AXIS));
@@ -93,7 +92,7 @@ public class GUI extends JFrame{
 						}
 						else{
 							JOptionPane.showMessageDialog(buttonConfirmer.getParent(), "Les mots de passe ne concordent pas.");
-						}
+						}					
 					}
 					else{
 						JOptionPane.showMessageDialog(buttonConfirmer.getParent(), "Veuillez entrer une adresse courriel et un mot de passe pour créer un compte étudiant.");
@@ -150,7 +149,6 @@ public class GUI extends JFrame{
 		return champsEtudiantsRemplis() &&
 				!textFieldNomCoop.getText().equals("") &&
 				!textFieldAdresseCoop.getText().equals("");
-				
 	}
 	
 	public static void main(String args[]){
